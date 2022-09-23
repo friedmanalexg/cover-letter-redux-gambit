@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  letter_title: MyString
+  recipient: MyString
+  company: MyString
+  job_title: MyString
+  variable1: MyString
+  variable2: MyString
+
+two:
+  letter_title: MyString
+  recipient: MyString
+  company: MyString
+  job_title: MyString
+  variable1: MyString
+  variable2: MyString
