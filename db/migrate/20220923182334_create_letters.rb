@@ -7,6 +7,7 @@ class CreateLetters < ActiveRecord::Migration[7.0]
       t.string :job_title
       t.string :variable1
       t.string :variable2
+      t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
     end

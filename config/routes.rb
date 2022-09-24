@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :letter_blocks
   resources :prose_blocks
   resources :letters
   resources :users

@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  block_name: MyString
+  block_title: MyString
   type: 
   prose_content: MyText
-  letter: one
+  user: one
 
 two:
-  block_name: MyString
+  block_title: MyString
   type: 
   prose_content: MyText
-  letter: two
+  user: two

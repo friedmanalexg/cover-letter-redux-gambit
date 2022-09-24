@@ -1,3 +1,4 @@
 class Letter < ApplicationRecord
-    has_many :prose_blocks
+  belongs_to :user
+  has_many :letter_blocks, dependent: :destroy
 end

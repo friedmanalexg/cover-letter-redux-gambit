@@ -864,3 +864,599 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
 
 
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:49:35 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 10ms (Views: 0.1ms | ActiveRecord: 4.2ms | Allocations: 3606)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:49:39 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 797)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:49:45 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 797)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:49:51 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 785)
+
+
+Started GET "/main.26027dcf14abfedacd8b.hot-update.json" for 127.0.0.1 at 2022-09-23 11:50:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/main.26027dcf14abfedacd8b.hot-update.json"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:50:06 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 790)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-23 11:50:06 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 789)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (1.0ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Destroy (0.4ms)[0m  [1m[31mDELETE FROM "prose_blocks" WHERE "prose_blocks"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Destroy (0.3ms)[0m  [1m[31mDELETE FROM "prose_blocks" WHERE "prose_blocks"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Destroy (0.4ms)[0m  [1m[31mDELETE FROM "prose_blocks" WHERE "prose_blocks"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (0.3ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220923182231)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (16.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cover_letter_buddy_take_1_development"[0m
+  [1m[35m (11.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cover_letter_buddy_take_1_test"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cover_letter_buddy_take_1_development"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "cover_letter_buddy_take_1_test"[0m
+  [1m[35m (79.0ms)[0m  [1m[35mCREATE DATABASE "cover_letter_buddy_take_1_development" ENCODING = 'unicode'[0m
+  [1m[35m (66.8ms)[0m  [1m[35mCREATE DATABASE "cover_letter_buddy_take_1_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220923182231)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923182231"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLetters (20220923182334)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "letters" ("id" bigserial primary key, "letter_title" character varying, "recipient" character varying, "company" character varying, "job_title" character varying, "variable1" character varying, "variable2" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0236efdee3"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_letters_on_user_id" ON "letters" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923182334"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProseBlocks (20220923182538)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "prose_blocks" ("id" bigserial primary key, "block_title" character varying, "type" character varying, "prose_content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_6c4ab9a824"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_prose_blocks_on_user_id" ON "prose_blocks" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923182538"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLetterBlocks (20220923182637)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "letter_blocks" ("id" bigserial primary key, "letter_id" bigint NOT NULL, "prose_block_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e55b480fe0"
+FOREIGN KEY ("letter_id")
+  REFERENCES "letters" ("id")
+, CONSTRAINT "fk_rails_a316d21121"
+FOREIGN KEY ("prose_block_id")
+  REFERENCES "prose_blocks" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_letter_blocks_on_letter_id" ON "letter_blocks" ("letter_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_letter_blocks_on_prose_block_id" ON "letter_blocks" ("prose_block_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923182637"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-23 18:35:10.597591"], ["updated_at", "2022-09-23 18:35:10.597591"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Testboy"], ["password_digest", "[FILTERED]"], ["created_at", "2022-09-23 18:39:11.055834"], ["updated_at", "2022-09-23 18:39:11.055834"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Create (0.5ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "Test Letter"], ["recipient", "Josh at HR"], ["company", "TestCo"], ["job_title", "Test Job"], ["variable1", "Test String 1"], ["variable2", "Test String 2"], ["user_id", 1], ["created_at", "2022-09-23 18:39:11.081405"], ["updated_at", "2022-09-23 18:39:11.081405"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" ORDER BY "letters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Testboy"], ["password_digest", "[FILTERED]"], ["created_at", "2022-09-23 18:39:43.418732"], ["updated_at", "2022-09-23 18:39:43.418732"]]
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Create (0.5ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "Test Letter"], ["recipient", "Josh at HR"], ["company", "TestCo"], ["job_title", "Test Job"], ["variable1", "Test String 1"], ["variable2", "Test String 2"], ["user_id", 1], ["created_at", "2022-09-23 18:39:43.446946"], ["updated_at", "2022-09-23 18:39:43.446946"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" ORDER BY "letters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (0.3ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Testboy"], ["password_digest", "[FILTERED]"], ["created_at", "2022-09-23 18:41:20.342679"], ["updated_at", "2022-09-23 18:41:20.342679"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Create (0.5ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "Test Letter"], ["recipient", "Josh at HR"], ["company", "TestCo"], ["job_title", "Test Job"], ["variable1", "Test String 1"], ["variable2", "Test String 2"], ["user_id", 3], ["created_at", "2022-09-23 18:41:20.367946"], ["updated_at", "2022-09-23 18:41:20.367946"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" ORDER BY "letters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeTypeToBlockTypeOnProseBlock (20220923184334)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "prose_blocks" RENAME COLUMN "type" TO "block_type"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220923184334"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2831328289871267445)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Testboy"], ["password_digest", "[FILTERED]"], ["created_at", "2022-09-23 18:49:50.108109"], ["updated_at", "2022-09-23 18:49:50.108109"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Create (0.5ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "Test Letter"], ["recipient", "Josh at HR"], ["company", "TestCo"], ["job_title", "Test Job"], ["variable1", "Test String 1"], ["variable2", "Test String 2"], ["user_id", 4], ["created_at", "2022-09-23 18:49:50.134352"], ["updated_at", "2022-09-23 18:49:50.134352"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" ORDER BY "letters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Destroy (0.5ms)[0m  [1m[31mDELETE FROM "letters" WHERE "letters"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Testboy"], ["password_digest", "[FILTERED]"], ["created_at", "2022-09-23 18:51:10.882233"], ["updated_at", "2022-09-23 18:51:10.882233"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Create (0.4ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "Test Letter"], ["recipient", "Josh at HR"], ["company", "TestCo"], ["job_title", "Test Job"], ["variable1", "Test String 1"], ["variable2", "Test String 2"], ["user_id", 5], ["created_at", "2022-09-23 18:51:10.909599"], ["updated_at", "2022-09-23 18:51:10.909599"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Create (0.8ms)[0m  [1m[32mINSERT INTO "prose_blocks" ("block_title", "block_type", "prose_content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["block_title", "Test Greeting"], ["block_type", "greeting"], ["prose_content", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], ["user_id", 5], ["created_at", "2022-09-23 18:51:10.927502"], ["updated_at", "2022-09-23 18:51:10.927502"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Create (0.2ms)[0m  [1m[32mINSERT INTO "prose_blocks" ("block_title", "block_type", "prose_content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["block_title", "Test Body"], ["block_type", "body"], ["prose_content", "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["user_id", 5], ["created_at", "2022-09-23 18:51:10.932328"], ["updated_at", "2022-09-23 18:51:10.932328"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Create (0.3ms)[0m  [1m[32mINSERT INTO "prose_blocks" ("block_title", "block_type", "prose_content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["block_title", "Test Closing"], ["block_type", "closing"], ["prose_content", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], ["user_id", 5], ["created_at", "2022-09-23 18:51:10.936018"], ["updated_at", "2022-09-23 18:51:10.936018"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks"[0m
+Started GET "/me" for 127.0.0.1 at 2022-09-23 14:53:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 19ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 20395)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-23 14:53:32 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 186ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 15173)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-23 14:53:40 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-23 14:54:54 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 178ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-23 14:54:57 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-09-24 18:29:12 -0400
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:29:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 24ms (Views: 0.3ms | ActiveRecord: 8.1ms | Allocations: 19470)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 18:29:25 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 181ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1846)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-24 18:29:30 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:36:13 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 9ms (Views: 0.1ms | ActiveRecord: 3.7ms | Allocations: 3607)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 18:36:20 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 176ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 780)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-24 18:36:25 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 168)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:52:42 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 8ms (Views: 0.1ms | ActiveRecord: 3.3ms | Allocations: 3607)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 18:53:00 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 178ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:54:35 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 830)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:57:03 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 736)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 18:57:07 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 176ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 18:57:42 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 732)
+
+
+Started GET "/main.ba318f85f1ba98aadb50.hot-update.json" for 127.0.0.1 at 2022-09-24 18:57:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/main.ba318f85f1ba98aadb50.hot-update.json"):
+  
+Started POST "/login" for 127.0.0.1 at 2022-09-24 18:57:48 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 175ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:00:23 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.6ms | Allocations: 6119)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<UsersController:0x00000000009330>):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:00:40 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 179ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 877)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-24 19:01:35 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:01:41 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 790)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:01:52 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 177ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 775)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:02:02 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2378)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<UsersController:0x00000000009498>):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:04:28 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Completed 201 Created in 179ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 773)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:04:31 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2372)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<UsersController:0x00000000009538>):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:04:36 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2371)
+
+
+  
+NameError (undefined local variable or method `byebug' for #<UsersController:0x000000000095d8>):
+  
+app/controllers/users_controller.rb:15:in `show'
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:05:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (45.51ms)
+Completed 200 OK in 9080ms (Views: 54.4ms | ActiveRecord: 9.2ms | Allocations: 145415)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:05:19 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.65ms)
+Completed 201 Created in 184ms (Views: 5.6ms | ActiveRecord: 0.8ms | Allocations: 3431)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:05:29 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.8ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.9ms)
+Completed 200 OK in 49793ms (Views: 4.5ms | ActiveRecord: 1.6ms | Allocations: 6143)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:07:13 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.1ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.02ms)
+Completed 201 Created in 203ms (Views: 15.7ms | ActiveRecord: 6.2ms | Allocations: 16387)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:07:42 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.51ms)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 3396)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:07:42 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.41ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.7ms | Allocations: 3266)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:09:22 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.04ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.0ms | Allocations: 3258)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:17:03 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 15ms (Views: 4.1ms | ActiveRecord: 4.4ms | Allocations: 3917)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-24 19:18:19 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.02ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.0ms | Allocations: 3288)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-24 19:18:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.47ms)
+Completed 201 Created in 186ms (Views: 6.3ms | ActiveRecord: 1.0ms | Allocations: 3299)
+
+

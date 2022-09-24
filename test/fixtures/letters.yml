@@ -7,6 +7,7 @@ one:
   job_title: MyString
   variable1: MyString
   variable2: MyString
+  user: one
 
 two:
   letter_title: MyString
@@ -15,3 +16,4 @@ two:
   job_title: MyString
   variable1: MyString
   variable2: MyString
+  user: two

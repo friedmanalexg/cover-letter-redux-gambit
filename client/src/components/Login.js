@@ -36,6 +36,8 @@ function Login () {
     }
     return(
         <>
+        <h1>Welcome back to Cover Letter Buddy™®©!</h1>
+        <h3>Please log in with your credentials below.</h3>
         <form onSubmit={handleLoginSubmit}>
         <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here"></input>
         <input type="text" name="password" onChange={handleChange} placeholder="Hey type pwd here" ></input>

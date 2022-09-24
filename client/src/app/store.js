@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import letterReducer from '../features/letterSlice';
 import userReducer from '../features/userSlice';
 
 const store = configureStore({
   reducer: {
-    user: userReducer
+    user: userReducer,
+    letter: letterReducer
   }
 })
 

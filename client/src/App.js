@@ -14,23 +14,13 @@ import { AuthRoute } from './tools/hooks'
 
 const App = () => {
   const { user } = useSelector(state => state.user)
-  // if(isLoading){
-  //   return(
-  //     <div>
-  //       <div>
-  //          <h1 className="title">Loading...</h1>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-  // useEffect with get current dispatch logic, pull user from state with useSelector hook
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCurrentUser(user));
-    // console.log(user, "I am the one inside use effect lol");
+   
   }, []);
 
-  console.log(user, "I am the one outside of use effect lol")
+  
 
 
 
