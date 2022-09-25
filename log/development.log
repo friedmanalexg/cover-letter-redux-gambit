@@ -1492,3 +1492,32 @@ Completed 201 Created in 240ms (Views: 51.3ms | ActiveRecord: 8.3ms | Allocation
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+Started GET "/me" for 127.0.0.1 at 2022-09-25 15:44:49 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.75ms)
+Completed 200 OK in 16ms (Views: 4.7ms | ActiveRecord: 5.8ms | Allocations: 6273)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-25 15:44:54 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]", "session"=>{"username"=>"Testboy", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<Letter id: 5, letter_title: "Test Letter", recipient: "Josh at HR", company: "TestCo", job_title: "Test Job", variable1: "Test String 1", variable2: "Test String 2", user_id: 5, created_at: "2022-09-23 18:51:10.909599000 +0000", updated_at: "2022-09-23 18:51:10.909599000 +0000">
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.8ms)
+Completed 201 Created in 180ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 3298)
+
+

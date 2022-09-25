@@ -2,9 +2,36 @@ import React, { useState } from 'react';
 import {  useSelector } from 'react-redux';
 
 const Letters = () => {
+  //setting up state
+  const [letterForm, setLetterForm] = useState(
+    { letter_title: "",
+      recipient: "",
+      company: "",
+      job_title: "",
+      variable1: "",
+      variable2: "",
+      user_id: user.id
+  })
   const [selectedLetter, setSelectedLetter] = useState({})
   const { user } = useSelector(state => state.user)
   // const dispatch = useDispatch();
+  
+  //handler functions 
+  const handleCreateLetter = (e) => {
+    newLetter = {...letterForm, [e.target.name]: e.target.value }
+    fetch("/letters", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newLetter)
+      })
+        
+    
+}
+  
+  // give inputs name attribute to corresponding keys
+
+  //setting up variables
+  
   let my_letters = user.letters
   let letters_list = my_letters.map(letter => {
     return(

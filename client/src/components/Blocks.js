@@ -15,7 +15,7 @@ const Blocks = () => {
     <>
     <div>Blocks</div>
     <h1>You will mess around with your prose blocks up in here bruh</h1>
-    <select> <option value={console.log("hello!")}>Create New Letter</option>, {letters_list} </select>
+    <select> <option value={console.log("hello!")}>Create New Prose Block</option>, {prose_list} </select>
     </>
   )
 }
@@ -31,3 +31,5 @@ export default Blocks
 
 //BEWARE... DELETE in Redux is extremely asanine https://youtu.be/bml92jhF4t8?t=2098
 //how is it that obnoxious 🤣
+
+//i can use "select" instead of input for form data
