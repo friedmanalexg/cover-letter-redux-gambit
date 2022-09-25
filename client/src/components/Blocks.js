@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Blocks = () => {
+  const [selectedBlocks, setSelectedBlocks] = useState({})
+  const { user } = useSelector(state => state.user)
+  //const dispatch = useDispatch();
+  let my_prose = user.prose_blocks
+  let prose_list = my_prose.map(pbObj => {
+    return(
+      <option value={pbObj.block_title}>{pbObj.block_title}</option>
+  )});
+  
   return (
     <>
     <div>Blocks</div>
     <h1>You will mess around with your prose blocks up in here bruh</h1>
+    <select> <option value={console.log("hello!")}>Create New Letter</option>, {letters_list} </select>
     </>
   )
 }

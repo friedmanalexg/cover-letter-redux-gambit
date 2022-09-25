@@ -8,6 +8,7 @@ const Letters = () => {
   let my_letters = user.letters
   let letters_list = my_letters.map(letter => {
     return(
+      
       <option value={letter.letter_title}>{letter.letter_title}</option>
     
   )});
@@ -16,7 +17,7 @@ const Letters = () => {
     <>
     <div>Letters</div>
     <h1>You will mess around with your letters and probably get real frustrated here bruh</h1>
-    <select> {letters_list} </select>
+    <select> <option value={console.log("hello!")}>Create New Letter</option>, {letters_list} </select>
     </>
   )
 }
