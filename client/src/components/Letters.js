@@ -1,32 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {  useSelector } from 'react-redux';
+import LetterEditCard from './LetterEditCard';
 
 const Letters = () => {
   //setting up state
-  const [letterForm, setLetterForm] = useState(
-    { letter_title: "",
-      recipient: "",
-      company: "",
-      job_title: "",
-      variable1: "",
-      variable2: "",
-      user_id: user.id
-  })
-  const [selectedLetter, setSelectedLetter] = useState({})
   const { user } = useSelector(state => state.user)
+  // const { letter } = useSelector(state => state.letter )
+  const emptyLetter = {
+    letter_title: "",
+    recipient: "",
+    company: "",
+    job_title: "",
+    variable1: "",
+    variable2: "",
+    user_id: user.id}
+
+  const [selectedLetter, setSelectedLetter] = useState(emptyLetter)
+  
+  
   // const dispatch = useDispatch();
   
   //handler functions 
-  const handleCreateLetter = (e) => {
-    newLetter = {...letterForm, [e.target.name]: e.target.value }
-    fetch("/letters", {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(newLetter)
-      })
+  // const handleCreateLetter = (e) => {
+  //   newLetter = {...letterForm, [e.target.name]: e.target.value }
+  //   fetch("/letters", {
+  //       method: "POST",
+  //       headers: {'Content-Type': 'application/json'},
+  //       body: JSON.stringify(newLetter)
+  //     })}
         
-    
-}
+  const handleLetterSelect = (e) => {
+    if (e.target.value !== "") {
+      setSelectedLetter(  
+      
+        ...user.letters.filter( letter => letter.letter_title == e.target.value  ))
+    } else {
+      setSelectedLetter(emptyLetter)
+    };
+  }    
+  
+  console.log(selectedLetter)
   
   // give inputs name attribute to corresponding keys
 
@@ -44,7 +57,8 @@ const Letters = () => {
     <>
     <div>Letters</div>
     <h1>You will mess around with your letters and probably get real frustrated here bruh</h1>
-    <select> <option value={console.log("hello!")}>Create New Letter</option>, {letters_list} </select>
+    <select onChange={handleLetterSelect}> <option value={""}>Create New Letter</option>, {letters_list} </select>
+    <LetterEditCard selectedLetter = {selectedLetter} />
     </>
   )
 }
