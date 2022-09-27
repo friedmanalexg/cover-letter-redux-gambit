@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## to do: 
+add another prose block*
+save and view letter 
+ delete selected letter
+create new prose block
+Save Block (patch) 
+Delete Selected Block
+program validations (Jose says use required on frontend)
+any CSS
 
-* System dependencies
 
-* Configuration
+## notes toward feature completion
+Save and View letter fetchpocalypse
+- grab data from form
+- grab id of selected prose blocks 
+- grab position of prose blocks from select divs
+- PATCH if letter exists
+creaing join array
+-empty option to force user to make selection
+-if position == old position, delete old object
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+if we find position is empty, add the obj
+if we find position is filled, drop the old object, add the obj

@@ -13,7 +13,7 @@ class LettersController < ApplicationController
         letter = Letter.find(params[:id])
         if user
             render json: letter, status: :ok
-        end
+        else
             render json: { error: "Not authorized" }, status: :unauthorized
         end
     end
@@ -21,12 +21,17 @@ class LettersController < ApplicationController
     # POST /letters
     def create
         letter = Letter.create(letter_params)
+        # do a for each to create join table 'letter_block'
         if letter.valid?
             render json: letter, status: :created
         else
             render json: letter.errors, status: :unprocessable_entity
         end
     end
+
+    #create with params letter_title, recipient, company, job_title, variable1, variable2
+    #create joins with an array of objects as params "selected_blocks"
+    #alternately, create joins with a button on the card?
 
     # DELETE /users/1
     def destroy
@@ -43,7 +48,7 @@ class LettersController < ApplicationController
     private
     # Only allow a list of trusted parameters through.
     def letter_params
-        params.permit(:letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id)
+        params.permit(:letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id, :selected_blocks)
     end
 
 

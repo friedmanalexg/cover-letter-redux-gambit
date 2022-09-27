@@ -1,21 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import BlockEditCard from './BlockEditCard'
 
 const Blocks = () => {
-  const [selectedBlocks, setSelectedBlocks] = useState({})
   const { user } = useSelector(state => state.user)
+  const [selectedBlock, setSelectedBlock] = useState({})
+  const emptyBlock = {
+    block_title: "",
+    block_type: "",
+    prose_content: "",
+    user_id: ""
+  }
+
+  useEffect(() => {
+    emptyBlock.user_id = user.id
+
+  }, [user])
+
   //const dispatch = useDispatch();
   let my_prose = user.prose_blocks
   let prose_list = my_prose.map(pbObj => {
     return(
       <option value={pbObj.block_title}>{pbObj.block_title}</option>
   )});
+
+  const handleBlockSelect = (e) => {
+    if (e.target.value !== "") {
+      setSelectedBlock(  
+      
+        ...user.prose_blocks.filter( pbObj => pbObj.block_title == e.target.value  ))
+    } else {
+      setSelectedBlock(emptyBlock)
+    };
+  }    
   
   return (
     <>
     <div>Blocks</div>
     <h1>You will mess around with your prose blocks up in here bruh</h1>
-    <select> <option value={console.log("hello!")}>Create New Prose Block</option>, {prose_list} </select>
+    <select onChange={handleBlockSelect}> <option value={""}>Create New Prose Block</option>, {prose_list} </select>
+    <BlockEditCard selectedBlock = {selectedBlock} />
     </>
   )
 }

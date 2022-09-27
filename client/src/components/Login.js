@@ -40,7 +40,7 @@ function Login () {
         <h3>Please log in with your credentials below.</h3>
         <form onSubmit={handleLoginSubmit}>
         <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here"></input>
-        <input type="text" name="password" onChange={handleChange} placeholder="Hey type pwd here" ></input>
+        <input type="password" name="password" onChange={handleChange} placeholder="Hey type pwd here" ></input>
             <input name="submit" type="submit"></input>
         </form>
         <NavButton />

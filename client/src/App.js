@@ -13,19 +13,25 @@ import { getCurrentUser } from './features/userSlice'
 import { AuthRoute } from './tools/hooks'
 
 const App = () => {
-  const { user } = useSelector(state => state.user)
+  const { user, isLoading } = useSelector(state => state.user)
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCurrentUser(user));
+    dispatch(getCurrentUser());
    
-  }, []);
+  }, [dispatch]);
 
   
 
 
 
 
-
+  if (isLoading) {
+    return (
+      <>
+      <p>"Loading"</p>
+      </>
+    );
+  }
   return (
     <>
       <NavBar />

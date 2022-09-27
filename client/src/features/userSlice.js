@@ -27,11 +27,11 @@ export const userSlice = createSlice({
     extraReducers: {
         // handle async action types
         [getCurrentUser.pending](state) {
-          state.status = "loading";
+          state.isLoading = true ;
         },
         [getCurrentUser.fulfilled](state, action) {
-          state.entities = action.payload;
-          state.status = "idle";
+          state.user = action.payload;
+          state.isLoading = false;
         },
       },
 });
