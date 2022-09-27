@@ -20,4 +20,10 @@ class LetterBlocksController < ApplicationController
         end
     end
 
+    private
+    
+    def letter_block_params
+        params.permit(:letter_id, :prose_block_id, :position)
+    end
+
 end

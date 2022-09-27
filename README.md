@@ -15,13 +15,18 @@ any CSS
 
 ## notes toward feature completion
 Save and View letter fetchpocalypse
-- grab data from form
-- grab id of selected prose blocks 
-- grab position of prose blocks from select divs
+- grab data from form ✅
+- grab id of selected prose blocks ✅
+- grab position of prose blocks from select divs ✅
 - PATCH if letter exists
 creaing join array
--empty option to force user to make selection
--if position == old position, delete old object
+-empty option to force user to make selection ✅
+-if position == old position, delete old object ✅
 
 if we find position is empty, add the obj
 if we find position is filled, drop the old object, add the obj
+
+Write a React component that can render the letter with the objects listed in order from Letter.letterblock.position 
+
+Render the component with the return of a function in a div below the LetterEditCard (or maybe at the bottom of lettereditcard)
+

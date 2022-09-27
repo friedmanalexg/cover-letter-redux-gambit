@@ -32,8 +32,18 @@ class LettersController < ApplicationController
     #create with params letter_title, recipient, company, job_title, variable1, variable2
     #create joins with an array of objects as params "selected_blocks"
     #alternately, create joins with a button on the card?
+    def update
+        letter = Letter.find_by(id: params[:id])
+        letter.update(letter_params)
+        if letter.valid?
+            render json: letter, status: :accepted
+        else
+            render json: letter.errors, status: :unprocessable_entity
+        end
+    end
+    
+   
 
-    # DELETE /users/1
     def destroy
         user = User.find_by(id: session[:user_id])
         letter = Letter.find(params[:id])
@@ -48,7 +58,7 @@ class LettersController < ApplicationController
     private
     # Only allow a list of trusted parameters through.
     def letter_params
-        params.permit(:letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id, :selected_blocks)
+        params.permit(:letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id)
     end
 
 

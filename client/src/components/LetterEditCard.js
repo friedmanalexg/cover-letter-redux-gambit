@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 const LetterEditCard = ({ selectedLetter }) => {
   const { user } = useSelector(state => state.user)
-  
+
   const [letterForm, setLetterForm] = useState({
     letter_title: "",
     recipient: "",
@@ -17,11 +17,11 @@ const LetterEditCard = ({ selectedLetter }) => {
   const [joinArray, setJoinArray] = useState([])
 
 
-  
+
   useEffect(() => {
-    setLetterForm({...selectedLetter, user_id: user.id})
+    setLetterForm({ ...selectedLetter, user_id: user.id })
     setMyProse(user.prose_blocks)
-    
+
   }, [selectedLetter, user])
 
   const handleFieldChange = (e) => {
@@ -38,110 +38,117 @@ const LetterEditCard = ({ selectedLetter }) => {
       position: parseInt(e.target.name)
     }
 
-    if(!joinArray.some( obj => obj.position === parseInt(e.target.name) ) ){
+    if (!joinArray.some(obj => obj.position === parseInt(e.target.name))) {
       console.log('if')
-         
+
       setJoinArray([...joinArray, newJoinObj])
     } else {
-      setJoinArray(joinArray.map( obj => {
-        if(obj.position === parseInt(e.target.name)){
-          return { ...obj, prose_block_id: parseInt(e.target.value)}
+      setJoinArray(joinArray.map(obj => {
+        if (obj.position === parseInt(e.target.name)) {
+          return { ...obj, prose_block_id: parseInt(e.target.value) }
         } else {
           return obj;
         }
-  }))
-      }
+      }))
+    }
 
-    
-    
+
+
   }
-console.log(joinArray)
+  console.log(joinArray)
   const handleLetterSubmit = (e) => {
     e.preventDefault()
-    
-      fetch('/letters', {
-        method: "PATCH",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(letterForm)
+
+    fetch(`/letters/${selectedLetter.id}`, {
+      method: "PATCH",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(letterForm)
+    })
+      .then(joinArray.forEach(element => {
+        fetch('/letter_blocks', {
+          method:"POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(element)  
       })
-      //do your dot thens
-      
-      // When you create the letter, on the back end create the joins in the letter#create action.
-      // Perhaps add "letter_blocks" as a param to the controller so you can send the join info through the body of this fetch.
-      
+      }));
+    //do your dot thens
 
-}
-const handleLetterDelete = (e) => {
-  console.log("hey you still gotta program me!")
-}
+    // When you create the letter, on the back end create the joins in the letter#create action.
+    // 
 
 
+  }
+  const handleLetterDelete = (e) => {
+    console.log("hey you still gotta program me!")
+  }
 
-//prose blocks variables and mapping
 
-const [myProse, setMyProse] = useState([])
-let prose_list = myProse.map(pbObj => {
+
+  //prose blocks variables and mapping
+
+  const [myProse, setMyProse] = useState([])
+  let prose_list = myProse.map(pbObj => {
+    return (
+      <option value={pbObj.id}>{pbObj.block_title}</option>
+    )
+  });
+
+
   return (
-    <option value={pbObj.id}>{pbObj.block_title}</option>
+    <>
+      <div>LetterEditCard</div>
+      <form onSubmit={handleLetterSubmit} >
+        <label>
+          Letter Title:
+          <input type="text" name="letter_title" value={letterForm.letter_title} onChange={handleFieldChange} />
+        </label>
+        <label>
+          Recipient:
+          <input type="text" name="recipient" value={letterForm.recipient} onChange={handleFieldChange} />
+        </label>
+        <label>
+          Company:
+          <input type="text" name="company" value={letterForm.company} onChange={handleFieldChange} />
+        </label>
+        <label>
+          Job Title:
+          <input type="text" name="job_title" value={letterForm.job_title} onChange={handleFieldChange} />
+        </label>
+        <label>
+          User Variable 1:
+          <input type="text" name="variable1" value={letterForm.variable1} onChange={handleFieldChange} />
+        </label>
+        <label>
+          User Variable 2:
+          <input type="text" name="variable2" value={letterForm.variable2} onChange={handleFieldChange} />
+        </label>
+        <p>Please select prose blocks from your collection to construct your letter.</p>
+
+        <select id="pbselect1" name='1' onChange={handleProseSelect}>
+          <option value={""}>Select a Block</option>
+          {prose_list}
+        </select>
+
+        <select id="pbselect2" name='2' onChange={handleProseSelect}>
+          <option value={""}>Select a Block</option>
+          {prose_list}
+        </select>
+
+        <select id="pbselect3" name='3' onChange={handleProseSelect}>
+          <option value={""}>Select a Block</option>
+          {prose_list}
+        </select>
+
+        {/* <button id="newbtn">add another prose block</button> */}
+        <input type="submit" value="Save and View" />
+        <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
+        <button id='Fuckin work' onClick={() => console.log(joinArray)}>Fuckin Work Already</button>
+      </form>
+
+
+
+    </>
   )
-});
-
-
-return (
-  <>
-    <div>LetterEditCard</div>
-    <form onSubmit={handleLetterSubmit} >
-      <label>
-        Letter Title:
-        <input type="text" name="letter_title" value={letterForm.letter_title} onChange={handleFieldChange} />
-      </label>
-      <label>
-        Recipient:
-        <input type="text" name="recipient" value={letterForm.recipient} onChange={handleFieldChange} />
-      </label>
-      <label>
-        Company:
-        <input type="text" name="company" value={letterForm.company} onChange={handleFieldChange} />
-      </label>
-      <label>
-        Job Title:
-        <input type="text" name="job_title" value={letterForm.job_title} onChange={handleFieldChange} />
-      </label>
-      <label>
-        User Variable 1:
-        <input type="text" name="variable1" value={letterForm.variable1} onChange={handleFieldChange} />
-      </label>
-      <label>
-        User Variable 2:
-        <input type="text" name="variable2" value={letterForm.variable2} onChange={handleFieldChange} />
-      </label>
-      <p>Please select prose blocks from your collection to construct your letter.</p>
-
-      <select id="pbselect1" name='1' onChange={handleProseSelect}>
-        <option value={""}>Select a Block</option>
-        {prose_list}
-      </select>
-
-      <select id="pbselect2" name='2' onChange={handleProseSelect}>
-        <option value={""}>Select a Block</option>
-        {prose_list}
-      </select>
-
-      <select id="pbselect3" name='3' onChange={handleProseSelect}>
-        <option value={""}>Select a Block</option>
-        {prose_list}
-      </select>
-
-      {/* <button id="newbtn">add another prose block</button> */}
-      <input type="submit" value="Save and View" />
-      <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
-      <button id='Fuckin work' onClick={()=>console.log(joinArray)}>Fuckin Work Already</button>
-    </form>
-
-
-
-  </>
-)
 }
 
 export default LetterEditCard

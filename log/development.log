@@ -4415,3 +4415,436 @@ Processing by UsersController#show as */*
 Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 3376)
 
 
+Started PATCH "/letters" for 127.0.0.1 at 2022-09-27 19:17:44 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/letters"):
+  
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:17:44 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:17:44 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:17:44 -0400
+Processing by LetterBlocksController#create as */*
+Processing by LetterBlocksController#create as */*
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>12, "prose_block_id"=>2, "position"=>2}
+  Parameters: {"letter_id"=>12, "prose_block_id"=>1, "position"=>1}
+  Parameters: {"letter_id"=>12, "prose_block_id"=>3, "position"=>3}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.5ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProseBlock Load (0.6ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProseBlock Load (0.5ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (3.9ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 12], ["prose_block_id", 3], ["created_at", "2022-09-27 23:17:44.522757"], ["updated_at", "2022-09-27 23:17:44.522757"], ["position", 3]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (4.2ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 12], ["prose_block_id", 1], ["created_at", "2022-09-27 23:17:44.523840"], ["updated_at", "2022-09-27 23:17:44.523840"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (3.9ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 12], ["prose_block_id", 2], ["created_at", "2022-09-27 23:17:44.524645"], ["updated_at", "2022-09-27 23:17:44.524645"], ["position", 2]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.18ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.19ms)
+Completed 201 Created in 75ms (Views: 4.4ms | ActiveRecord: 16.4ms | Allocations: 44011)
+
+
+Completed 201 Created in 76ms (Views: 2.4ms | ActiveRecord: 17.9ms | Allocations: 44117)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.1ms)
+Completed 201 Created in 78ms (Views: 4.1ms | ActiveRecord: 13.0ms | Allocations: 44728)
+
+
+Started GET "/main.ac87bb5639eec4dd9814.hot-update.json" for 127.0.0.1 at 2022-09-27 19:24:12 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/main.ac87bb5639eec4dd9814.hot-update.json"):
+  
+Started GET "/me" for 127.0.0.1 at 2022-09-27 19:24:12 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (50.03ms)
+Completed 200 OK in 95ms (Views: 51.9ms | ActiveRecord: 10.1ms | Allocations: 82310)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-27 19:24:12 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.84ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 1.0ms | Allocations: 3403)
+
+
+Started POST "/letters" for 127.0.0.1 at 2022-09-27 19:24:15 -0400
+Processing by LettersController#create as */*
+  Parameters: {"letter_title"=>"My New Letter", "recipient"=>"", "company"=>"", "job_title"=>"", "variable1"=>"", "variable2"=>"", "user_id"=>5}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letters_controller.rb:23:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/letters_controller.rb:23:in `create'
+  [1m[36mLetter Create (0.5ms)[0m  [1m[32mINSERT INTO "letters" ("letter_title", "recipient", "company", "job_title", "variable1", "variable2", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["letter_title", "My New Letter"], ["recipient", ""], ["company", ""], ["job_title", ""], ["variable1", ""], ["variable2", ""], ["user_id", 5], ["created_at", "2022-09-27 23:24:15.253516"], ["updated_at", "2022-09-27 23:24:15.253516"]]
+  ↳ app/controllers/letters_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letters_controller.rb:23:in `create'
+[active_model_serializers] Rendered LetterSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 201 Created in 12ms (Views: 0.8ms | ActiveRecord: 5.0ms | Allocations: 3424)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-27 19:24:15 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.39ms)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 3547)
+
+
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:33 -0400
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>1, "position"=>1}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.1ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 1], ["created_at", "2022-09-27 23:24:33.290163"], ["updated_at", "2022-09-27 23:24:33.290163"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.19ms)
+Completed 201 Created in 28ms (Views: 1.4ms | ActiveRecord: 4.3ms | Allocations: 20446)
+
+
+Started PATCH "/letters" for 127.0.0.1 at 2022-09-27 19:24:33 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:33 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:33 -0400
+Processing by LetterBlocksController#create as */*
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>2, "position"=>2}
+  Parameters: {"letter_id"=>13, "prose_block_id"=>3, "position"=>3}
+  
+ActionController::RoutingError (No route matches [PATCH] "/letters"):
+  
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.5ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.7ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 2], ["created_at", "2022-09-27 23:24:33.599554"], ["updated_at", "2022-09-27 23:24:33.599554"], ["position", 2]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.17ms)
+Completed 201 Created in 24ms (Views: 0.7ms | ActiveRecord: 10.2ms | Allocations: 10646)
+
+
+  [1m[36mLetter Load (1.7ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.6ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.8ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 3], ["created_at", "2022-09-27 23:24:33.614551"], ["updated_at", "2022-09-27 23:24:33.614551"], ["position", 3]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.2ms)
+Completed 201 Created in 32ms (Views: 0.7ms | ActiveRecord: 11.6ms | Allocations: 13381)
+
+
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:35 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:35 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:24:35 -0400
+Started PATCH "/letters" for 127.0.0.1 at 2022-09-27 19:24:35 -0400
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>2, "position"=>2}
+  
+ActionController::RoutingError (No route matches [PATCH] "/letters"):
+  
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>3, "position"=>3}
+Processing by LetterBlocksController#create as */*
+  [1m[36mLetter Load (2.1ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Parameters: {"letter_id"=>13, "prose_block_id"=>1, "position"=>1}
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (1.8ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (1.7ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.7ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 2], ["created_at", "2022-09-27 23:24:35.700073"], ["updated_at", "2022-09-27 23:24:35.700073"], ["position", 2]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (1.9ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.7ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 3], ["created_at", "2022-09-27 23:24:35.705535"], ["updated_at", "2022-09-27 23:24:35.705535"], ["position", 3]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.17ms)
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+Completed 201 Created in 34ms (Views: 1.5ms | ActiveRecord: 11.8ms | Allocations: 12772)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.14ms)
+Completed 201 Created in 25ms (Views: 1.4ms | ActiveRecord: 7.3ms | Allocations: 8708)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.6ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.9ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.9ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 1], ["created_at", "2022-09-27 23:24:35.726555"], ["updated_at", "2022-09-27 23:24:35.726555"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.17ms)
+Completed 201 Created in 39ms (Views: 0.7ms | ActiveRecord: 18.8ms | Allocations: 12302)
+
+
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:15 -0400
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>1, "position"=>1}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.4ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 1], ["created_at", "2022-09-27 23:27:15.150327"], ["updated_at", "2022-09-27 23:27:15.150327"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.13ms)
+Completed 201 Created in 8ms (Views: 0.6ms | ActiveRecord: 1.8ms | Allocations: 3562)
+
+
+Started PATCH "/letters/13" for 127.0.0.1 at 2022-09-27 19:27:15 -0400
+Processing by LettersController#update as */*
+  Parameters: {"id"=>"13", "letter_title"=>"My New Letter", "recipient"=>"arhsadth", "company"=>"ahatjsk", "job_title"=>"rrr", "variable1"=>"arg", "variable2"=>"agh", "user_id"=>5}
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:15 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:15 -0400
+  [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letters_controller.rb:36:in `update'
+[31mUnpermitted parameter: :id. Context: { controller: LettersController, action: update, request: #<ActionDispatch::Request:0x00007f8000c3ba90>, params: {"id"=>"13", "letter_title"=>"My New Letter", "recipient"=>"arhsadth", "company"=>"ahatjsk", "job_title"=>"rrr", "variable1"=>"arg", "variable2"=>"agh", "user_id"=>5, "controller"=>"letters", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Processing by LetterBlocksController#create as */*
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  Parameters: {"letter_id"=>13, "prose_block_id"=>3, "position"=>3}
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>2, "position"=>2}
+  [1m[36mLetter Update (1.3ms)[0m  [1m[33mUPDATE "letters" SET "recipient" = $1, "company" = $2, "job_title" = $3, "variable1" = $4, "variable2" = $5, "updated_at" = $6 WHERE "letters"."id" = $7[0m  [["recipient", "arhsadth"], ["company", "ahatjsk"], ["job_title", "rrr"], ["variable1", "arg"], ["variable2", "agh"], ["updated_at", "2022-09-27 23:27:15.463407"], ["id", 13]]
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.7ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.5ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProseBlock Load (0.8ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.3ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 3], ["created_at", "2022-09-27 23:27:15.474704"], ["updated_at", "2022-09-27 23:27:15.474704"], ["position", 3]]
+[active_model_serializers] Rendered LetterSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.3ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 2], ["created_at", "2022-09-27 23:27:15.476768"], ["updated_at", "2022-09-27 23:27:15.476768"], ["position", 2]]
+Completed 202 Accepted in 25ms (Views: 2.3ms | ActiveRecord: 8.0ms | Allocations: 9796)
+
+
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.14ms)
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+Completed 201 Created in 18ms (Views: 1.1ms | ActiveRecord: 4.2ms | Allocations: 8339)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.13ms)
+Completed 201 Created in 18ms (Views: 1.2ms | ActiveRecord: 4.2ms | Allocations: 8475)
+
+
+Started PATCH "/letters/13" for 127.0.0.1 at 2022-09-27 19:27:34 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:34 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:34 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:27:34 -0400
+Processing by LettersController#update as */*
+  Parameters: {"id"=>"13", "letter_title"=>"My Completely Different Letter", "recipient"=>"arhsadth", "company"=>"ahatjsk", "job_title"=>"rrr", "variable1"=>"arg", "variable2"=>"agh", "user_id"=>5}
+Processing by LetterBlocksController#create as */*
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>3, "position"=>3}
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>1, "position"=>1}
+  Parameters: {"letter_id"=>13, "prose_block_id"=>2, "position"=>2}
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLetter Load (1.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letters_controller.rb:36:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[31mUnpermitted parameter: :id. Context: { controller: LettersController, action: update, request: #<ActionDispatch::Request:0x00007f8000abb0d0>, params: {"id"=>"13", "letter_title"=>"My Completely Different Letter", "recipient"=>"arhsadth", "company"=>"ahatjsk", "job_title"=>"rrr", "variable1"=>"arg", "variable2"=>"agh", "user_id"=>5, "controller"=>"letters", "action"=>"update"} }[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  [1m[36mLetter Load (3.0ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mLetter Load (1.9ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (1.9ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLetter Update (1.1ms)[0m  [1m[33mUPDATE "letters" SET "letter_title" = $1, "updated_at" = $2 WHERE "letters"."id" = $3[0m  [["letter_title", "My Completely Different Letter"], ["updated_at", "2022-09-27 23:27:34.310506"], ["id", 13]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  [1m[36mProseBlock Load (2.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.4ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 3], ["created_at", "2022-09-27 23:27:34.314250"], ["updated_at", "2022-09-27 23:27:34.314250"], ["position", 3]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.0ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 1], ["created_at", "2022-09-27 23:27:34.316648"], ["updated_at", "2022-09-27 23:27:34.316648"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered LetterSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.13ms)
+Completed 202 Accepted in 31ms (Views: 2.2ms | ActiveRecord: 7.9ms | Allocations: 13126)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.22ms)
+Completed 201 Created in 31ms (Views: 2.9ms | ActiveRecord: 8.9ms | Allocations: 13318)
+
+
+Completed 201 Created in 30ms (Views: 2.3ms | ActiveRecord: 9.5ms | Allocations: 13299)
+
+
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (0.5ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 2], ["created_at", "2022-09-27 23:27:34.334825"], ["updated_at", "2022-09-27 23:27:34.334825"], ["position", 2]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.16ms)
+Completed 201 Created in 40ms (Views: 0.6ms | ActiveRecord: 23.5ms | Allocations: 17105)
+
+
+  [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters"[0m
+  [1m[36mLetterBlock Load (0.5ms)[0m  [1m[34mSELECT "letter_blocks".* FROM "letter_blocks"[0m
+  [1m[36mLetterBlock Count (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "letter_blocks"[0m
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:29:59 -0400
+Started PATCH "/letters/12" for 127.0.0.1 at 2022-09-27 19:29:59 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:29:59 -0400
+Started POST "/letter_blocks" for 127.0.0.1 at 2022-09-27 19:29:59 -0400
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>1, "position"=>3}
+Processing by LetterBlocksController#create as */*
+  Parameters: {"letter_id"=>13, "prose_block_id"=>3, "position"=>2}
+Processing by LettersController#update as */*
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"id"=>"12", "letter_title"=>"Test Letter", "recipient"=>"Josh at HR", "company"=>"TestCo", "job_title"=>"Test Job", "variable1"=>"Test String 1", "variable2"=>"Test String 2", "user_id"=>5}
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+Processing by LetterBlocksController#create as */*
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetter Load (0.7ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mLetter Load (0.6ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letters_controller.rb:36:in `update'
+  [1m[36mLetter Load (1.0ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[31mUnpermitted parameter: :id. Context: { controller: LettersController, action: update, request: #<ActionDispatch::Request:0x00007f80007db360>, params: {"id"=>"12", "letter_title"=>"Test Letter", "recipient"=>"Josh at HR", "company"=>"TestCo", "job_title"=>"Test Job", "variable1"=>"Test String 1", "variable2"=>"Test String 2", "user_id"=>5, "controller"=>"letters", "action"=>"update"} }[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (0.8ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"letter_id"=>13, "prose_block_id"=>2, "position"=>1}
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProseBlock Load (0.9ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.6ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 1], ["created_at", "2022-09-27 23:29:59.229591"], ["updated_at", "2022-09-27 23:29:59.229591"], ["position", 3]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mLetterBlock Create (1.8ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 3], ["created_at", "2022-09-27 23:29:59.233144"], ["updated_at", "2022-09-27 23:29:59.233144"], ["position", 2]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLetter Load (0.7ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letters_controller.rb:37:in `update'
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mProseBlock Load (2.6ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered LetterSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.14ms)
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.16ms)
+Completed 202 Accepted in 25ms (Views: 2.5ms | ActiveRecord: 5.6ms | Allocations: 10399)
+
+
+Completed 201 Created in 29ms (Views: 1.9ms | ActiveRecord: 5.7ms | Allocations: 12440)
+
+
+Completed 201 Created in 32ms (Views: 1.8ms | ActiveRecord: 8.7ms | Allocations: 13098)
+
+
+  [1m[36mLetterBlock Create (1.7ms)[0m  [1m[32mINSERT INTO "letter_blocks" ("letter_id", "prose_block_id", "created_at", "updated_at", "position") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["letter_id", 13], ["prose_block_id", 2], ["created_at", "2022-09-27 23:29:59.245902"], ["updated_at", "2022-09-27 23:29:59.245902"], ["position", 1]]
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/letter_blocks_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with LetterBlock (0.16ms)
+Completed 201 Created in 25ms (Views: 0.7ms | ActiveRecord: 8.0ms | Allocations: 9541)
+
+
+  [1m[36mLetterBlock Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "letter_blocks"[0m
