@@ -8,6 +8,7 @@ const NavBar = () => {
       return (
         <>
         <div>NavBar</div>
+        <NavButton path="/me" text='Home'/>
         <NavButton path="/letters" text="My Letters" />
         <NavButton path="/blocks" text="My Prose Blocks" />
         <NavButton path="/logout" text="Log Out" />

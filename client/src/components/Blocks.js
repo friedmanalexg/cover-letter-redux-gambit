@@ -57,7 +57,8 @@ const Blocks = () => {
   return (
     <>
     <div>Blocks</div>
-    <h1>You will mess around with your prose blocks up in here bruh</h1>
+    <h1>Prose Blocks</h1>
+    <h3>You can use this form to create and manage your prose blocks.</h3>
     <select onChange={handleBlockSelect}> <option value={""}>Select a prose block...</option>, {prose_list} </select>
     <button id="newbtn" onClick={handleCreateProseBlock}>create another prose block</button>
     <BlockEditCard selectedBlock = {selectedBlock} />
@@ -74,7 +75,7 @@ export default Blocks
 //Fetch notes... fetch the data for blocks and letters and feed them to the state store. Then use that copy instead of fetching. Send data back but copy it to state at the same time instead of doing more GET fetches.
 // Fetch => Store => Map => Render => Modify => Store & Fetch:PATCH
 
-//BEWARE... DELETE in Redux is extremely asanine https://youtu.be/bml92jhF4t8?t=2098
-//how is it that obnoxious 🤣
+//BEWARE... DELETE in Redux can be complex https://youtu.be/bml92jhF4t8?t=2098
 
-//i can use "select" instead of input for form data
+
+//i need to use "select" instead of input for dropdown form data

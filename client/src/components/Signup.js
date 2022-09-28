@@ -30,9 +30,9 @@ function Signup () {
         <h1>Sign up for Cover Letter Buddy™®©</h1>
         <h3>(Do it while it is free lol)</h3>
         <form onSubmit={handleSignupSubmit}>
-            <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here"></input>
-            <input type="password" name="password" onChange={handleChange} placeholder="Hey type pwd here" ></input>
-            <input type="password" name="password-confirmation" onChange={handleChange} placeholder="Hey type pwd here again, do it!" ></input>
+            <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here" required></input>
+            <input type="password" name="password" onChange={handleChange} placeholder="Hey type pwd here" required></input>
+            <input type="password" name="password-confirmation" onChange={handleChange} placeholder="Hey type pwd here again, do it!" required></input>
             {/* above is convention for bcrypt */}
             <input name="submit" type="submit"></input>
         </form>

@@ -4,7 +4,8 @@
 
 ## to do: 
 add another prose block*
-save ✅ and view letter 
+save ✅ and view letter
+backend auth 
 
 
 Save Block (patch) 
@@ -27,4 +28,7 @@ Save and View letter fetchpocalypse
 Write a React component that can render the letter with the objects listed in order from Letter.letterblock.position 
 
 Render the component with the return of a function in a div below the LetterEditCard (or maybe at the bottom of lettereditcard)
+
+Prose blocks will have keywords to interpolate Letter's variable data. Users will either be instructed on simple syntax to use this feature,
+or I will write a button to populate them either in the field or the user's clipboard.  
 

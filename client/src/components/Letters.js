@@ -88,7 +88,8 @@ const Letters = () => {
     <>
     <div>Letters</div>
       <button onClick={handleCreateLetter}>Create New Letter</button>
-      <h1>You will mess around with your letters and probably get real frustrated here bruh</h1>
+      <h1>Letters</h1>
+      <h3>You can create and manage letters. Press the "Save and View" button to compile your letter.</h3>
         <select onChange={handleLetterSelect}> <option value={""}>Select a Letter</option>, {letters_list} </select>
       <LetterEditCard selectedLetter = {selectedLetter} />
       <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>

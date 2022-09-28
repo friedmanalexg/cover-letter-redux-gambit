@@ -39,35 +39,14 @@ function Login () {
         <h1>Welcome back to Cover Letter Buddy™®©!</h1>
         <h3>Please log in with your credentials below.</h3>
         <form onSubmit={handleLoginSubmit}>
-        <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here"></input>
-        <input type="password" name="password" onChange={handleChange} placeholder="Hey type pwd here" ></input>
+        <input type="text" name="username" onChange={handleChange} placeholder="Hey type username here" required></input>
+        <input type="password" name="password" onChange={handleChange} placeholder="Hey type pwd here" required></input>
             <input name="submit" type="submit"></input>
         </form>
         <NavButton />
         </>
 )}
 
-// const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Convert this to redux when you don't hate it
-//     fetch("/login", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(formData),
-//     }).then((res) => {
-//       if (res.ok) {
-//         res.json().then((user) => {
-//           dispatch(setCurrentUser(user));
-//           dispatch(setErrors([]));
-//           navigate("/home");
-//         });
-//       } else {
-//         res.json().then((data) => {
-//           dispatch(setErrors(data.errors));
-//         });
-//       }
-//     });
-//   };
 
 
 export default Login

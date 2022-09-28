@@ -6221,3 +6221,182 @@ Processing by SessionsController#destroy as */*
 Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 184)
 
 
+Started POST "/login" for 127.0.0.1 at 2022-09-28 12:48:49 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.69ms)
+Completed 201 Created in 199ms (Views: 6.8ms | ActiveRecord: 5.0ms | Allocations: 6464)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:48:56 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.99ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 3591)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:00 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.41ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.1ms | Allocations: 3588)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:02 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.89ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.0ms | Allocations: 3590)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-28 12:49:09 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 172)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-28 12:49:14 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.3ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.41ms)
+Completed 201 Created in 183ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 3628)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:21 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.62ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 3592)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:22 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.2ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.2ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.46ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 3588)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:23 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.1ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.65ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.8ms | Allocations: 3586)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:26 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.7ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.3ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.01ms)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.3ms | Allocations: 3589)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:31 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.97ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 1.1ms | Allocations: 3592)
+
+
+Started GET "/me" for 127.0.0.1 at 2022-09-28 12:49:32 -0400
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.5ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.38ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 1.2ms | Allocations: 3588)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-28 14:12:04 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (Allocations: 186)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-09-28 14:12:13 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"Testboy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Testboy"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mProseBlock Load (0.4ms)[0m  [1m[34mSELECT "prose_blocks".* FROM "prose_blocks" WHERE "prose_blocks"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] No serializer found for resource: #<ProseBlock id: 1, block_title: "Test Greeting", block_type: "greeting", prose_content: "Ut enim ad minim veniam, quis nostrud exercitation...", user_id: 5, created_at: "2022-09-23 18:51:10.927502000 +0000", updated_at: "2022-09-23 18:51:10.927502000 +0000">
+[active_model_serializers]   [1m[36mLetter Load (0.4ms)[0m  [1m[34mSELECT "letters".* FROM "letters" WHERE "letters"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (6.03ms)
+Completed 201 Created in 188ms (Views: 5.8ms | ActiveRecord: 4.5ms | Allocations: 6505)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-28 14:18:39 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (Allocations: 168)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2022-09-28 14:19:24 -0400
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 0ms (Allocations: 173)
+
+
