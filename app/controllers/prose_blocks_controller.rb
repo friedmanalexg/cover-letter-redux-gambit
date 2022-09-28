@@ -12,7 +12,7 @@ class ProseBlocksController < ApplicationController
         prose = ProseBlock.find(params[:id])
         if user
             render json: prose, status: :ok
-        end
+        else
             render json: { error: "Not authorized" }, status: :unauthorized
         end
     end

@@ -12,6 +12,7 @@ import Signup from './components/Signup'
 import { getCurrentUser } from './features/userSlice'
 import { AuthRoute } from './tools/hooks'
 
+
 const App = () => {
   const { user, isLoading } = useSelector(state => state.user)
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const App = () => {
       <NavBar />
 
       <Routes>
-
+        
         <Route index element={<Root />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Login />} />
@@ -62,7 +63,7 @@ const App = () => {
           </AuthRoute>
         } />
         <Route path='*' element={<NotFound />} />
-
+       
 
       </Routes>
     </>

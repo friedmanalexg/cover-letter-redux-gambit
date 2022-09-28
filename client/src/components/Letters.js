@@ -50,9 +50,25 @@ const Letters = () => {
       
         ...myLetters.filter( letter => letter.letter_title === e.target.value  ))
     } else {
+      setMyLetters(user.letters)
       setSelectedLetter(emptyLetter)
     };
-  }    
+  }
+  
+  const handleLetterDelete = (e) => {
+    console.log("You clicked Delete!")
+    fetch(`/letters/${selectedLetter.id}`, {
+      method: "DELETE"
+    })
+    .then(() => {dispatch(getCurrentUser())
+    setMyLetters(  
+      
+      ...myLetters.filter( letter => letter.id !== selectedLetter.id  ))})
+    .then(setSelectedLetter(emptyLetter))
+    alert("Letter deleted!")
+
+
+  }
   
   
   
@@ -71,10 +87,11 @@ const Letters = () => {
   return (
     <>
     <div>Letters</div>
-    <button onClick={handleCreateLetter}>Create New Letter</button>
-    <h1>You will mess around with your letters and probably get real frustrated here bruh</h1>
-    <select onChange={handleLetterSelect}> <option value={""}>Select a Letter</option>, {letters_list} </select>
-    <LetterEditCard selectedLetter = {selectedLetter} />
+      <button onClick={handleCreateLetter}>Create New Letter</button>
+      <h1>You will mess around with your letters and probably get real frustrated here bruh</h1>
+        <select onChange={handleLetterSelect}> <option value={""}>Select a Letter</option>, {letters_list} </select>
+      <LetterEditCard selectedLetter = {selectedLetter} />
+      <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
     </>
   )
 }

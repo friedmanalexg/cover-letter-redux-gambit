@@ -47,18 +47,18 @@ class LettersController < ApplicationController
     def destroy
         user = User.find_by(id: session[:user_id])
         letter = Letter.find(params[:id])
-        if letter
+        if user
           letter.destroy
           head :no_content
         else
-          render json: { error: "Not authorized" }, status: :unauthorized
+          render json: { error: "Not found." }, status: :not_found
         end
     end
 
     private
     # Only allow a list of trusted parameters through.
     def letter_params
-        params.permit(:letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id)
+        params.permit(:id, :letter_title, :recipient, :company, :job_title, :variable1, :variable2, :user_id)
     end
 
 

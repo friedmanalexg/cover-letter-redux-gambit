@@ -78,9 +78,7 @@ const LetterEditCard = ({ selectedLetter }) => {
 
 
   }
-  const handleLetterDelete = (e) => {
-    console.log("hey you still gotta program me!")
-  }
+  
 
 
 
@@ -141,8 +139,7 @@ const LetterEditCard = ({ selectedLetter }) => {
 
         {/* <button id="newbtn">add another prose block</button> */}
         <input type="submit" value="Save and View" />
-        <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
-        <button id='Fuckin work' onClick={() => console.log(joinArray)}>Fuckin Work Already</button>
+        
       </form>
 
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :prose_blocks
   resources :letters
   resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Alex, remember to go through and cut unused routes.
 
   # Defines the root path route ("/")
   # root "articles#index"

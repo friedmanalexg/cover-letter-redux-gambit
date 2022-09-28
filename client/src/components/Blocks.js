@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import BlockEditCard from './BlockEditCard'
+import { getCurrentUser } from '../features/userSlice'
 
 const Blocks = () => {
+
   const { user } = useSelector(state => state.user)
   const [selectedBlock, setSelectedBlock] = useState({})
+  const [myProseList, setMyProseList] = useState([])
   const emptyBlock = {
     block_title: "",
     block_type: "",
@@ -13,13 +16,15 @@ const Blocks = () => {
   }
 
   useEffect(() => {
+    setMyProseList(user.prose_blocks)
     emptyBlock.user_id = user.id
 
-  }, [user])
+  }, [user, emptyBlock])
 
-  //const dispatch = useDispatch();
-  let my_prose = user.prose_blocks
-  let prose_list = my_prose.map(pbObj => {
+  const dispatch = useDispatch();
+
+  
+  let prose_list = myProseList.map(pbObj => {
     return(
       <option value={pbObj.block_title}>{pbObj.block_title}</option>
   )});
@@ -32,13 +37,29 @@ const Blocks = () => {
     } else {
       setSelectedBlock(emptyBlock)
     };
-  }    
+  } 
+
+  const handleCreateProseBlock = (e) => {
+    let newPB = {...emptyBlock, block_title: "My New Prose Block", user_id: user.id }
+    fetch("/prose_blocks", {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newPB)
+    })
+    .then (res => res.json())
+    .then (data => {
+      dispatch(getCurrentUser())
+      
+    })
+  }
+
   
   return (
     <>
     <div>Blocks</div>
     <h1>You will mess around with your prose blocks up in here bruh</h1>
-    <select onChange={handleBlockSelect}> <option value={""}>Create New Prose Block</option>, {prose_list} </select>
+    <select onChange={handleBlockSelect}> <option value={""}>Select a prose block...</option>, {prose_list} </select>
+    <button id="newbtn" onClick={handleCreateProseBlock}>create another prose block</button>
     <BlockEditCard selectedBlock = {selectedBlock} />
     </>
   )
