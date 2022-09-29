@@ -73,19 +73,29 @@ const LetterEditCard = ({ selectedLetter }) => {
           body: JSON.stringify(element)  
       })
       }));
-    //do your dot thens
-
-    // When you create the letter, on the back end create the joins in the letter#create action.
+        }    // When you create the letter, on the back end create the joins in the letter#create action.
     // 
 
 
-  }
   
-
+  const handlePBSelect1 = (e) =>{
+    let pb1 = user.prose_blocks.find(obj => obj.id === parseInt(e.target.value))
+    setPbSelect1(pb1.block_title)
+  }
+  const handlePBSelect2 = (e) =>{
+    let pb2 = user.prose_blocks.find(obj => obj.id === parseInt(e.target.value))
+    setPbSelect2(pb2.block_title)
+  }
+  const handlePBSelect3 = (e) =>{
+    let pb3 = user.prose_blocks.find(obj => obj.id === parseInt(e.target.value))
+    setPbSelect3(pb3.block_title)
+  }
 
 
   //prose blocks variables and mapping
-
+  const [pbSelect1, setPbSelect1]= useState("") 
+  const [pbSelect2, setPbSelect2]= useState("")
+  const [pbSelect3, setPbSelect3]= useState("")
   const [myProse, setMyProse] = useState([])
   let prose_list = myProse.map(pbObj => {
     return (
@@ -123,18 +133,20 @@ const LetterEditCard = ({ selectedLetter }) => {
           <input type="text" name="variable2" value={letterForm.variable2} onChange={handleFieldChange} />
         </label>
         <p>Please select prose blocks from your collection to construct your letter.</p>
-
-        <select id="pbselect1" name='1' onChange={handleProseSelect}>
+        <h3>{pbSelect1}</h3>
+        <select value={pbSelect1} id="pbselect1" name='1' onChange={handleProseSelect, handlePBSelect1 }>
+          <option value={""}>Select a Block</option>
+          {prose_list}
+        </select>
+        
+        <h3>{pbSelect2}</h3>
+        <select value={pbSelect2} id="pbselect2" name='2' onChange={handleProseSelect, handlePBSelect2}>
           <option value={""}>Select a Block</option>
           {prose_list}
         </select>
 
-        <select id="pbselect2" name='2' onChange={handleProseSelect}>
-          <option value={""}>Select a Block</option>
-          {prose_list}
-        </select>
-
-        <select id="pbselect3" name='3' onChange={handleProseSelect}>
+        <h3>{pbSelect3}</h3>
+        <select value={pbSelect3} id="pbselect3" name='3' onChange={handleProseSelect, handlePBSelect3}>
           <option value={""}>Select a Block</option>
           {prose_list}
         </select>

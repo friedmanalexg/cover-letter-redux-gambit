@@ -34,7 +34,7 @@ const Letters = () => {
 
   // handler functions 
   const handleCreateLetter = (e) => {
-    let newLetter = {...emptyLetter, letter_title: "My New Letter" }
+    let newLetter = {...emptyLetter, letter_title: "My New Letter", user_id: user.id }
     fetch("/letters", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},

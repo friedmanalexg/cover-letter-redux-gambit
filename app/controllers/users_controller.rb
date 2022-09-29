@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
     # before_action :set_user, only: %i[ show update destroy ]
     skip_before_action :authenticate_user, only: [:create, :show]
-    # GET /users
-    # def index
-    #   users = User.all
-  
-    #   render json: users
-    # end
+    #REMEMBER TO DELETE SHOW FROM HERE AND TEST BEFORE DEMO
+    
   
     # GET /me/1
     def show
