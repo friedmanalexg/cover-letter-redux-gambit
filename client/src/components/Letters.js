@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 import {  useDispatch, useSelector } from 'react-redux';
 import LetterEditCard from './LetterEditCard';
 import { getCurrentUser } from '../features/userSlice';
+import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom';
+
 
 const Letters = () => {
   //setting up state
   const { user } = useSelector(state => state.user)
+ 
   // const { letter } = useSelector(state => state.letter )
   const emptyLetter = {
     letter_title: "",
@@ -80,17 +84,18 @@ const Letters = () => {
   let letters_list = myLetters.map(letter => {
     return(
       
-      <option value={letter.letter_title}>{letter.letter_title}</option>
+      <option key={uuid()} value={letter.letter_title}>{letter.letter_title}</option>
     
   )});
   
+
   return (
     <>
     <div>Letters</div>
-      <button onClick={handleCreateLetter}>Create New Letter</button>
+      <button key={uuid()} onClick={handleCreateLetter}>Create New Letter</button>
       <h1>Letters</h1>
       <h3>You can create and manage letters. Press the "Save and View" button to compile your letter.</h3>
-        <select onChange={handleLetterSelect}> <option value={""}>Select a Letter</option>, {letters_list} </select>
+        <select key={uuid()} onChange={handleLetterSelect}> <option key={uuid()} value={""}>Select a Letter</option>, {letters_list} </select>
       <LetterEditCard selectedLetter = {selectedLetter} />
       <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
     </>
@@ -103,6 +108,6 @@ export default Letters
 // I need to render each Letter's "letter_title" in a dropdown.
 // When a user selects a Letter, render the LetterEditCard in a div below.
 
-//either make a new letter button or manually add an option to select on line 19ish
+
 
 

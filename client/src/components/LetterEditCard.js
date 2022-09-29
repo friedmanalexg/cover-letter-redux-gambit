@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { v4 as uuid } from 'uuid';
+
 
 const LetterEditCard = ({ selectedLetter }) => {
   const { user } = useSelector(state => state.user)
@@ -87,7 +89,7 @@ const LetterEditCard = ({ selectedLetter }) => {
   const [myProse, setMyProse] = useState([])
   let prose_list = myProse.map(pbObj => {
     return (
-      <option value={pbObj.id}>{pbObj.block_title}</option>
+      <option key={uuid()} value={pbObj.id}>{pbObj.block_title}</option>
     )
   });
 

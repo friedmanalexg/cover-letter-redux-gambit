@@ -16,6 +16,7 @@ import { AuthRoute } from './tools/hooks'
 const App = () => {
   const { user, isLoading } = useSelector(state => state.user)
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getCurrentUser());
    

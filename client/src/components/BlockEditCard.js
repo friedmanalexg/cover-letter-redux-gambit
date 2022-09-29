@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { v4 as uuid } from 'uuid';
 
 
 const BlockEditCard = ({selectedBlock}) => {
@@ -47,19 +48,19 @@ const BlockEditCard = ({selectedBlock}) => {
     <form onSubmit={handleBlockSubmit} >
       <label>
         Block Title:
-        <input type="text" name="block_title" value={proseForm.block_title} onChange={handleFieldChange} />
+        <input type="text" name="block_title" value={proseForm.block_title} onChange={handleFieldChange} key={uuid()} />
       </label>
       <label>
         Block Type:
-        <input type="text" name="block_type" value={proseForm.block_type} onChange={handleFieldChange} />
+        <input type="text" name="block_type" value={proseForm.block_type} onChange={handleFieldChange}  key={uuid()} />
       </label>
       <label>
         Prose Content:
-        <textarea type="text" name="prose_content" value={proseForm.prose_content} onChange={handleFieldChange} />
+        <textarea type="text" name="prose_content" value={proseForm.prose_content} onChange={handleFieldChange} key={uuid()} />
       </label>
       
 
-      <input type="submit" value="Save Block" />
+      <input key={uuid()} type="submit" value="Save Block" />
       <button id='delbtn' onClick={handleBlockDelete}>Delete Selected Block</button>
     </form>
 

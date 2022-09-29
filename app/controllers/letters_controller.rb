@@ -11,7 +11,7 @@ class LettersController < ApplicationController
     def show
         user = User.find_by(id: session[:user_id])
         letter = Letter.find(params[:id])
-        if user
+        if letter
             render json: letter, status: :ok
         else
             render json: { error: "Not authorized" }, status: :unauthorized

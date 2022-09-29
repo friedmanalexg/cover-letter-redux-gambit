@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BlockEditCard from './BlockEditCard'
 import { getCurrentUser } from '../features/userSlice'
+import { v4 as uuid } from 'uuid';
 
 const Blocks = () => {
 
@@ -26,7 +27,7 @@ const Blocks = () => {
   
   let prose_list = myProseList.map(pbObj => {
     return(
-      <option value={pbObj.block_title}>{pbObj.block_title}</option>
+      <option key={uuid()} value={pbObj.block_title}>{pbObj.block_title}</option>
   )});
 
   const handleBlockSelect = (e) => {

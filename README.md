@@ -12,6 +12,8 @@ Save Block (patch)
 Delete Selected Block
 program validations (Jose says use required on frontend)
 
+## known bugs:
+map functions break if users do no have any prose blocks or letters
 
 
 ## notes toward feature completion
@@ -32,3 +34,4 @@ Render the component with the return of a function in a div below the LetterEdit
 Prose blocks will have keywords to interpolate Letter's variable data. Users will either be instructed on simple syntax to use this feature,
 or I will write a button to populate them either in the field or the user's clipboard.  
 
+Frontend Auth, if not logged in you should not be able to hit the route✅

@@ -14,15 +14,17 @@ export const NavButton = ({ path = '/', text = "back" }) => {
 
 export const AuthRoute = ({ children, user }) => {
     const nav = useNavigate()
-    console.log(user, "I'm the one in AuthRoute!")
+    
     useEffect(() => {
         if (!user) {
             nav('/login')
         } 
         
-    })
+    },[])
 
- 
+if(!user) {
+    return<></>
+} 
 return (
     <>
         {children}

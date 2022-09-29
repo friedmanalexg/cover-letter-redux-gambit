@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import '../styles.css'
+import { v4 as uuid } from 'uuid';
 
 
 
@@ -11,18 +12,18 @@ import '../styles.css'
 
 const Home = () => {
   const { user } = useSelector(state => state.user)  
+  console.log(user)
 
-
-    let my_prose = user.prose_blocks
+    let my_prose = user.prose_blocks ? user.prose_blocks : [] 
     let prose_list = my_prose.map(pbObj => {
       return(
-        <li>{pbObj.block_title}</li>
+        <li key={uuid()} >{pbObj.block_title}</li>
     )});
 
-    let my_letters = user.letters
+    let my_letters = user.letters ? user.letters : []
     let letter_list = my_letters.map(lObj => {
       return(
-        <li>{lObj.letter_title}</li>
+        <li key={uuid()} >{lObj.letter_title}</li>
     )});
 
 
