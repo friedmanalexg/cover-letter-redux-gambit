@@ -41,7 +41,7 @@ const LetterEditCard = ({ selectedLetter }) => {
     }
 
     if (!joinArray.some(obj => obj.position === parseInt(e.target.name))) {
-      console.log('if')
+      
 
       setJoinArray([...joinArray, newJoinObj])
     } else {

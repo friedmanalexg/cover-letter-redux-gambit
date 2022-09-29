@@ -3,7 +3,7 @@ import {  useDispatch, useSelector } from 'react-redux';
 import LetterEditCard from './LetterEditCard';
 import { getCurrentUser } from '../features/userSlice';
 import { v4 as uuid } from 'uuid';
-import { useNavigate } from 'react-router-dom';
+
 
 
 const Letters = () => {
@@ -27,9 +27,9 @@ const Letters = () => {
   
   useEffect(() => {
     setMyLetters(user.letters)
-    emptyLetter.user_id = user.id
-      
-  }, [emptyLetter, user])
+    // emptyLetter.user_id = user.id
+  }, [ user ])    
+  // }, [emptyLetter, user])
   
 
   // handler functions 
@@ -50,6 +50,7 @@ const Letters = () => {
         
   const handleLetterSelect = (e) => {
     if (e.target.value !== "") {
+      console.log("I'm in the if!")
       setSelectedLetter(  
       
         ...myLetters.filter( letter => letter.letter_title === e.target.value  ))
@@ -74,7 +75,7 @@ const Letters = () => {
 
   }
   
-  
+  console.log(selectedLetter)
   
   // give inputs name attribute to corresponding keys
 
@@ -91,11 +92,11 @@ const Letters = () => {
 
   return (
     <>
-    <div>Letters</div>
+    <div>Letter</div>
       <button key={uuid()} onClick={handleCreateLetter}>Create New Letter</button>
       <h1>Letters</h1>
       <h3>You can create and manage letters. Press the "Save and View" button to compile your letter.</h3>
-        <select key={uuid()} onChange={handleLetterSelect}> <option key={uuid()} value={""}>Select a Letter</option>, {letters_list} </select>
+        <select value={selectedLetter.letter_title} key={uuid()} onChange={handleLetterSelect}> <option key={uuid()} value={""}>Select a Letter</option>, {letters_list} </select>
       <LetterEditCard selectedLetter = {selectedLetter} />
       <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
     </>

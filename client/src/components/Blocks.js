@@ -60,7 +60,7 @@ const Blocks = () => {
     <div>Blocks</div>
     <h1>Prose Blocks</h1>
     <h3>You can use this form to create and manage your prose blocks.</h3>
-    <select onChange={handleBlockSelect}> <option value={""}>Select a prose block...</option>, {prose_list} </select>
+    <select value={selectedBlock.block_title} onChange={handleBlockSelect}> <option value={""}>Select a prose block...</option>, {prose_list} </select>
     <button id="newbtn" onClick={handleCreateProseBlock}>create another prose block</button>
     <BlockEditCard selectedBlock = {selectedBlock} />
     </>

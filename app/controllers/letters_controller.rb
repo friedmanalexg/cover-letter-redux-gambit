@@ -34,6 +34,7 @@ class LettersController < ApplicationController
     #alternately, create joins with a button on the card?
     def update
         letter = Letter.find_by(id: params[:id])
+        letter.letter_blocks.destroy_all
         letter.update(letter_params)
         if letter.valid?
             render json: letter, status: :accepted
