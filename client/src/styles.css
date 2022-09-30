@@ -4,3 +4,19 @@
     align-items: center;
     flex-direction: column;
   }
+
+  .render__letter {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+  }
+
+  .block__edit__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

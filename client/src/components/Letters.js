@@ -10,7 +10,6 @@ const Letters = () => {
   //setting up state
   const { user } = useSelector(state => state.user)
  
-  // const { letter } = useSelector(state => state.letter )
   const emptyLetter = {
     letter_title: "",
     recipient: "",
@@ -27,9 +26,9 @@ const Letters = () => {
   
   useEffect(() => {
     setMyLetters(user.letters)
-    // emptyLetter.user_id = user.id
+    
   }, [ user ])    
-  // }, [emptyLetter, user])
+  
   
 
   // handler functions 
@@ -50,10 +49,8 @@ const Letters = () => {
         
   const handleLetterSelect = (e) => {
     if (e.target.value !== "") {
-      console.log("I'm in the if!")
       setSelectedLetter(  
-      
-        ...myLetters.filter( letter => letter.letter_title === e.target.value  ))
+      ...myLetters.filter( letter => letter.letter_title === e.target.value  ))
     } else {
       setMyLetters(user.letters)
       setSelectedLetter(emptyLetter)
@@ -66,37 +63,31 @@ const Letters = () => {
       method: "DELETE"
     })
     .then(() => {dispatch(getCurrentUser())
-    setMyLetters(  
-      
-      ...myLetters.filter( letter => letter.id !== selectedLetter.id  ))})
+    setMyLetters(...myLetters.filter( letter => letter.id !== selectedLetter.id ))})
     .then(setSelectedLetter(emptyLetter))
     alert("Letter deleted!")
-
-
   }
   
-  console.log(selectedLetter)
   
-  // give inputs name attribute to corresponding keys
+  
+  
 
-  //setting up variables
+  //setting up map
   
  
   let letters_list = myLetters.map(letter => {
     return(
-      
       <option key={uuid()} value={letter.letter_title}>{letter.letter_title}</option>
-    
   )});
   
 
   return (
     <>
     <div>Letter</div>
-      <button key={uuid()} onClick={handleCreateLetter}>Create New Letter</button>
+      <button onClick={handleCreateLetter}>Create New Letter</button>
       <h1>Letters</h1>
-      <h3>You can create and manage letters. Press the "Save and View" button to compile your letter.</h3>
-        <select value={selectedLetter.letter_title} key={uuid()} onChange={handleLetterSelect}> <option key={uuid()} value={""}>Select a Letter</option>, {letters_list} </select>
+      <h3>You can create and manage letters. Press the "Save" button to save your letter variables.</h3>
+        <select value={selectedLetter.letter_title} onChange={handleLetterSelect}> <option value={""}>Select a Letter</option>, {letters_list} </select>
       <LetterEditCard selectedLetter = {selectedLetter} />
       <button id='delbtn' onClick={handleLetterDelete}>Delete Selected Letter</button>
     </>

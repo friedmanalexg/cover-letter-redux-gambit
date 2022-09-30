@@ -18,6 +18,15 @@ class ProseBlocksController < ApplicationController
     end
 
     # PATCH /prose_blocks/1
+    def update
+        prose = ProseBlock.find_by(id: params[:id])
+        prose.update(prose_block_params)
+        if prose.valid?
+            render json: prose, status: :accepted
+        else
+            render json: prose.errors, status: :unprocessable_entity
+        end
+    end
     
 
     # POST /prose_blocks

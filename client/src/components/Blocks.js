@@ -4,42 +4,27 @@ import BlockEditCard from './BlockEditCard'
 import { getCurrentUser } from '../features/userSlice'
 import { v4 as uuid } from 'uuid';
 
+
 const Blocks = () => {
 
   const { user } = useSelector(state => state.user)
-  const [selectedBlock, setSelectedBlock] = useState({})
-  const [myProseList, setMyProseList] = useState([])
   const emptyBlock = {
     block_title: "",
     block_type: "",
     prose_content: "",
     user_id: ""
   }
+  const [selectedBlock, setSelectedBlock] = useState(emptyBlock)
+  const [myProseList, setMyProseList] = useState([])
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setMyProseList(user.prose_blocks)
-    emptyBlock.user_id = user.id
-
-  }, [user, emptyBlock])
-
-  const dispatch = useDispatch();
+    
+  }, [ user ])
 
   
-  let prose_list = myProseList.map(pbObj => {
-    return(
-      <option key={uuid()} value={pbObj.block_title}>{pbObj.block_title}</option>
-  )});
-
-  const handleBlockSelect = (e) => {
-    if (e.target.value !== "") {
-      setSelectedBlock(  
-      
-        ...user.prose_blocks.filter( pbObj => pbObj.block_title == e.target.value  ))
-    } else {
-      setSelectedBlock(emptyBlock)
-    };
-  } 
-
+// handler functions
   const handleCreateProseBlock = (e) => {
     let newPB = {...emptyBlock, block_title: "My New Prose Block", user_id: user.id }
     fetch("/prose_blocks", {
@@ -50,9 +35,34 @@ const Blocks = () => {
     .then (res => res.json())
     .then (data => {
       dispatch(getCurrentUser())
-      
+      setMyProseList([...myProseList, data])
     })
   }
+
+  const handleBlockSelect = (e) => {
+    if (e.target.value !== "") {
+      setSelectedBlock(  
+      ...user.prose_blocks.filter( pbObj => pbObj.block_title === e.target.value  ))
+    } else {
+      setMyProseList(user.prose_blocks)
+      setSelectedBlock(emptyBlock)
+    };
+  } 
+
+  const handleBlockDelete = (e) => {
+    fetch(`/prose_blocks/${selectedBlock.id}`,{
+    method: "DELETE"
+  })
+  .then(()=> {dispatch(getCurrentUser())
+  setMyProseList(...myProseList.filter( pbObj => pbObj.id !== selectedBlock.id ))})
+  alert("Prose block deleted!")
+  }
+
+  //setting up map
+  let prose_list = myProseList.map(pbObj => {
+    return(
+      <option key={uuid()} value={pbObj.block_title}>{pbObj.block_title}</option>
+  )});
 
   
   return (
@@ -61,7 +71,8 @@ const Blocks = () => {
     <h1>Prose Blocks</h1>
     <h3>You can use this form to create and manage your prose blocks.</h3>
     <select value={selectedBlock.block_title} onChange={handleBlockSelect}> <option value={""}>Select a prose block...</option>, {prose_list} </select>
-    <button id="newbtn" onClick={handleCreateProseBlock}>create another prose block</button>
+    <button id="newbtn" onClick={handleCreateProseBlock}>Create a New Prose Block</button>
+    <button id='delbtn' onClick={handleBlockDelete}>Delete Selected Block</button>
     <BlockEditCard selectedBlock = {selectedBlock} />
     </>
   )
