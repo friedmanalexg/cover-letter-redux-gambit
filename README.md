@@ -7,7 +7,8 @@ add another prose block*
 refactor renderer as a dynamic component
 interpolate variables into prose blocks
 export saved letter to TXT or something
-
+rtf format your export somehow, react npm library probably
+https://youtu.be/kykC7i9VUE4
 
 
 
