@@ -112,7 +112,7 @@ const LetterEditCard = ({ selectedLetter }) => {
 
   return (
     <>
-      <div>LetterEditCard</div>
+      <div></div>
       <form onSubmit={handleLetterSubmit} >
         <label>
           Letter Title:
@@ -122,6 +122,7 @@ const LetterEditCard = ({ selectedLetter }) => {
           Recipient:
           <input type="text" name="recipient" value={letterForm.recipient} onChange={handleFieldChange} />
         </label>
+        <div></div>
         <label>
           Company:
           <input type="text" name="company" value={letterForm.company} onChange={handleFieldChange} />
@@ -130,6 +131,7 @@ const LetterEditCard = ({ selectedLetter }) => {
           Job Title:
           <input type="text" name="job_title" value={letterForm.job_title} onChange={handleFieldChange} />
         </label>
+        <div></div>
         <label>
           User Variable 1:
           <input type="text" name="variable1" value={letterForm.variable1} onChange={handleFieldChange} />

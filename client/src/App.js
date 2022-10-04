@@ -11,6 +11,7 @@ import NavBar from './components/NavBar'
 import Signup from './components/Signup'
 import { getCurrentUser } from './features/userSlice'
 import { AuthRoute } from './tools/hooks'
+import './styles.css'
 
 
 const App = () => {

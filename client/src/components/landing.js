@@ -7,6 +7,7 @@ export function Root () {
     <>
         <div className='welcome__splash'>
         <h1>Welcome to Cover Letter Buddy!📝</h1>
+        <img className='landing__img' src='https://images.pexels.com/photos/4968667/pexels-photo-4968667.jpeg'/>
         <h3>Please log in or sign up below!👇</h3>
         </div>
         <div>

@@ -83,7 +83,7 @@ const Letters = () => {
 
   return (
     <>
-    <div>Letter</div>
+    <div></div>
       <button onClick={handleCreateLetter}>Create New Letter</button>
       <h1>Letters</h1>
       <h3>You can create and manage letters. Press the "Save" button to save your letter variables.</h3>

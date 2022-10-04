@@ -43,7 +43,7 @@ const BlockEditCard = ({selectedBlock}) => {
 
   return (
       <>
-    <div>BlockEditCard</div>
+    <div></div>
     <form onSubmit={handleBlockSubmit} className="block__edit__form">
       <label htmlFor='block_title'>Block Title:</label>
         <input type="text" name="block_title" value={proseForm.block_title} onChange={handleFieldChange} />

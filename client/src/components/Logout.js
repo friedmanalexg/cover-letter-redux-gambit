@@ -23,9 +23,12 @@ const Logout = () => {
   
     return (
         <>
-        <div>Logout</div>
-            <p>Thank you for using Cover Letter Buddy™®©!!</p>
-            <button onClick={handleLogoutSubmit}>Log me out!</button>
+            <div>
+                <h2>Done for now?</h2>
+                <p>Thank you for using Cover Letter Buddy™®©!!</p>
+                <button onClick={handleLogoutSubmit}>Log me out!</button>
+            </div>    
+                <img className='logout__img' src='https://images.pexels.com/photos/1603933/pexels-photo-1603933.jpeg'/>
         </>
   )
 }

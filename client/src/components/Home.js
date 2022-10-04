@@ -30,7 +30,7 @@ const Home = () => {
   
   return (
         <div className='welcome__splash'>
-        <h1>`Welcome, {user.username} `</h1>
+        <h1>Welcome, {user.username} </h1>
         <h2>My Prose Blocks:</h2>
           <ul>{prose_list}</ul> 
         <h2>My Letters:</h2>
